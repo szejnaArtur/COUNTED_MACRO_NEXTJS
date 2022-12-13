@@ -1,26 +1,100 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 * {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+body {
+  --color-gray-100: #fcfcfcfc;
+  --color-gray-200: #fcfcfcdd;
+  --color-gray-300: #fcfcfccc;
+  --color-gray-400: #fcfcfcaa;
+  --color-gray-500: #fcfcfc99;
+  --color-gray-600: #fcfcfc77;
+  --color-gray-700: #fcfcfc55;
+  --color-gray-800: #fcfcfc33;
+  --color-gray-900: #fcfcfc11;
+
+  --color-green-crayola-100: #d2f898;
+  --color-green-crayola-200: #d2f898dd;
+  --color-green-crayola-300: #d2f898cc;
+  --color-green-crayola-400: #d2f898aa;
+  --color-green-crayola-500: #d2f89899;
+  --color-green-crayola-600: #d2f89877;
+  --color-green-crayola-700: #d2f89855;
+  --color-green-crayola-800: #d2f89833;
+  --color-green-crayola-900: #d2f89811;
+
+  --color-mindaro-100: #dbf97e;
+  --color-mindaro-200: #dbf97edd;
+  --color-mindaro-300: #dbf97ecc;
+  --color-mindaro-400: #dbf97eaa;
+  --color-mindaro-500: #dbf97e99;
+  --color-mindaro-600: #dbf97e77;
+  --color-mindaro-700: #dbf97e55;
+  --color-mindaro-800: #dbf97e33;
+  --color-mindaro-900: #dbf97e11;
+
+  --color-maximum-yellow-100: #f6f930;
+  --color-maximum-yellow-200: #f6f930dd;
+  --color-maximum-yellow-300: #f6f930cc;
+  --color-maximum-yellow-400: #f6f930aa;
+  --color-maximum-yellow-500: #f6f93099;
+  --color-maximum-yellow-600: #f6f93077;
+  --color-maximum-yellow-700: #f6f93055;
+  --color-maximum-yellow-800: #f6f93033;
+  --color-maximum-yellow-900: #f6f93011;
+
+  --color-black-100: #2f2f2f;
+  --color-black-200: #2f2f2fdd;
+  --color-black-300: #2f2f2fcc;
+  --color-black-400: #2f2f2faa;
+  --color-black-500: #2f2f2f99;
+  --color-black-600: #2f2f2f77;
+  --color-black-700: #2f2f2f55;
+  --color-black-800: #2f2f2f33;
+  --color-black-900: #2f2f2f11;
+
+  --color-red-100: #D01313;
+  --color-red-200: #D01313dd;
+  --color-red-300: #D01313cc;
+  --color-red-400: #D01313aa;
+  --color-red-500: #D0131399;
+  --color-red-600: #D0131377;
+  --color-red-700: #D0131355;
+  --color-red-800: #D0131333;
+  --color-red-900: #D0131311;
+
+  --color-success-100: #a2f0bc;
+  --color-success-500: #12bd4b;
+
+  --size-1: 0.25rem;
+  --size-2: 0.5rem;
+  --size-3: 0.75rem;
+  --size-4: 1rem;
+  --size-5: 1.25rem;
+  --size-6: 1.5rem;
+  --size-8: 2rem;
+  --size-16: 4rem;
+  --size-20: 5rem;
+  --size-40: 10rem;
+
+  margin: 0;
+  background-color: var(--color-mindaro-100);
+  color: #252525;
+  font-family: 'Inter', sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Inter', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
 }
