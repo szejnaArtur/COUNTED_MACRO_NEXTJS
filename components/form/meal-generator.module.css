@@ -1,0 +1,66 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 500px;
+    min-height: 100px;
+    background-color: var(--color-gray-100);
+    color: var(--color-black-100);
+    z-index: 10;
+    padding: var(--size-2);
+    border-radius: var(--size-2);
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: auto;
+    height: auto;
+
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    padding: var(--size-2);
+    margin: var(--size-2);
+    border-radius: var(--size-2);
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.item .icon {
+    font-size: var(--size-8);
+    z-index: 20;
+}
+
+.item p {
+    font-size: var(--size-3);
+    margin: var(--size-2) 0 0 0;
+}
+
+.form{
+    flex-direction: column;
+    margin: var(--size-2);
+    display: grid;
+    gap: var(--size-2);
+    grid-template-columns: repeat(3, 1fr);
+
+    width: 100%;
+}
+
+.form div{
+
+}
+
+.form div label{
+
+}
+
+.form div input{
+}
