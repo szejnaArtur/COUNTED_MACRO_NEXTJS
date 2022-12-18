@@ -3,22 +3,17 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    min-height: 500px;
-    min-height: 100px;
     background-color: var(--color-gray-100);
     color: var(--color-black-100);
-    z-index: 10;
     padding: var(--size-2);
     border-radius: var(--size-2);
 }
 
 .icons {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
     width: auto;
     height: auto;
-
 }
 
 .item {
@@ -27,16 +22,16 @@
     justify-content: center;
     align-items: center;
     width: 100px;
-    padding: var(--size-2);
-    margin: var(--size-2);
+    padding: var(--size-1);
+    margin: var(--size-1);
     border-radius: var(--size-2);
     transition: all 0.5s;
     cursor: pointer;
+    border: none;
 }
 
 .item .icon {
     font-size: var(--size-8);
-    z-index: 20;
 }
 
 .item p {
@@ -44,23 +39,121 @@
     margin: var(--size-2) 0 0 0;
 }
 
-.form{
+.form {
+    display: flex;
     flex-direction: column;
-    margin: var(--size-2);
-    display: grid;
-    gap: var(--size-2);
-    grid-template-columns: repeat(3, 1fr);
-
     width: 100%;
+    gap: var(--size-5);
+    margin: var(--size-4);
 }
 
-.form div{
-
+.form .row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    position: relative;
+    gap: var(--size-5);
 }
 
-.form div label{
-
+.form .row label {
+    display: flex;
+    justify-content: right;
+    grid-column: span 1;
+    margin-block: auto;
 }
 
-.form div input{
+
+.form .row label {
+    display: flex;
+    justify-content: right;
+    grid-column: span 1;
+    font-size: var(--size-3);
+}
+
+.form .row .input {
+    width: 60%;
+    grid-column: span 2;
+    height: var(--size-9);
+    border: 1px solid var(--color-gray-300);
+    border-radius: var(--size-1);
+    padding: 0 190px 0 5px;
+}
+
+.form .row select {
+    padding: 0 2px !important;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 80px;
+    bottom: -1px;
+    color: var(--color-black-100);
+    cursor: pointer;
+    transition: 0.3s all;
+    border: none;
+    background-color: transparent;
+}
+
+.calculator:hover {
+    right: 73px;
+}
+
+.calculator p{
+    font-size: var(--size-3);
+}
+
+.calculator .calcIcon {
+    font-size: var(--size-6);
+}
+
+.calories {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 315px;
+    bottom: -1px;
+    font-size: 0.75em;
+    color: var(--color-black-100);
+    cursor: pointer;
+}
+
+.btn {
+    border: 1px solid var(--color-gray-300);
+    border-radius: var(--size-1);
+    height: var(--size-9);
+    background-color: var(--color-maximum-yellow-100);
+    color: var(--color-black-100);
+    margin-inline: var(--size-2);
+}
+
+@media (max-width: 991px) {
+    .icons {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .form .row .input {
+        width: 55%;
+        padding-right: 53px;
+    }
+
+    .form .row select {
+        padding: 0 5px !important;
+    }
+
+    .calculator {
+        right: 5px;
+    }
+
+    .calculator:hover {
+        right: -2px;
+    }
+
+    .calories {
+        right: 100px;
+    }
 }

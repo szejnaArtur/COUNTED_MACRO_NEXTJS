@@ -1,0 +1,172 @@
+.container {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 30%);
+    z-index: 15;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    background-color: var(--color-gray-100);
+    border-radius: var(--size-2);
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: var(--size-4);
+}
+
+.header h3 {
+    color: var(--color-black-100);
+    margin: 0;
+}
+
+.header .exit {
+    cursor: pointer;
+}
+
+.info {
+    margin: var(--size-4);
+    padding: var(--size-2);
+    font-size: var(--size-3);
+    background-color: var(--color-success-100);
+    border: 1px solid var(--color-success-500);
+    border-radius: var(--size-1);
+}
+
+.info p {
+    margin: var(--size-2);
+}
+
+.calculator {
+    margin: var(--size-4);
+    font-size: var(--size-3);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--size-2);
+}
+
+.calculator .label {
+    grid-column: span 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.calculator .section {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    position: relative;
+}
+
+.calculator .section input {
+    width: 50%;
+    height: var(--size-8);
+    border: 1px solid var(--color-gray-600);
+    border-radius: var(--size-1);
+    padding: 0 40px 0 var(--size-2);
+}
+
+.calculator .section p {
+    position: absolute;
+    right: 52%;
+    color: var(--color-black-100);
+}
+
+.calculator .section button {
+    width: 100%;
+    border: 1px solid var(--color-gray-600);
+    height: var(--size-8);
+    transition: 0.3s all;
+}
+
+.calculator .section button:first-child {
+    border-radius: var(--size-1) 0 0 var(--size-1);
+}
+
+.calculator .section button:last-child {
+    border-radius: 0 var(--size-1) var(--size-1) 0;
+}
+
+.calculator .section select {
+    width: 100%;
+    height: var(--size-8);
+    border: 1px solid var(--color-gray-600);
+    border-radius: var(--size-1);
+}
+
+.btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-inline: var(--size-4);
+    margin-block: var(--size-2);
+    border: 1px solid var(--color-gray-600);
+    border-radius: var(--size-1);
+    font-size: var(--size-4);
+    height: var(--size-10);
+    background-color: var(--color-yellow-500);
+    color: var(--color-black-100);
+}
+
+.btn p {
+    margin: 0 var(--size-1);
+}
+
+.table {
+    margin: var(--size-4);
+    font-size: var(--size-3);
+}
+
+.table tr {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.table tr th:first-child,
+.table tr td:first-child{
+    grid-column: span 2;
+}
+
+.table tr th,
+.table tr td{
+    text-align: center;
+}
+
+.table tr th{
+    padding-block: var(--size-2);
+    border-block: 1px solid var(--color-gray-600);
+}
+
+.table tr td{
+    padding-block: var(--size-2);
+}
+
+.btnApply {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-inline: var(--size-4);
+    margin-bottom: var(--size-4);
+    border: 1px solid var(--color-gray-600);
+    border-radius: var(--size-1);
+    font-size: var(--size-4);
+    height: var(--size-10);
+    background-color: var(--color-yellow-500);
+    color: var(--color-black-100);
+}
