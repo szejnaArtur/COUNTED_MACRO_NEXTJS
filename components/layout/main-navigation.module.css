@@ -1,57 +1,165 @@
-.container{
+.navigation {
     position: fixed;
-    top: 0;
-    width: 100%;
-    transition: 0.3s ease-in-out all;
-    z-index: 10;
-    margin: 0;
-    padding: 0;
-}
-
-.content{
-    max-width: 1240px;
-    margin: auto;
+    top: var(--size-4);
+    right: var(--size-4);
+    width: 120px;
+    height: 60px;
+    background-color: var(--color-gray-100);
+    box-shadow: 0 25px 35px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
+    transition: height 0.5s, width 0.5s;
+    transition-delay: 0s, 0.75s;
+    overflow: hidden;
+    border-radius: var(--size-2);
+}
+
+.active {
+    position: fixed;
+    top: var(--size-4);
+    right: var(--size-4);
+    width: 280px;
+    height: 330px;
+    background-color: var(--color-gray-100);
+    box-shadow: 0 25px 35px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    transition: width 0.5s, height 0.5s;
+    transition-delay: 0s, 0.75s;
+    overflow: hidden;
+    border-radius: var(--size-2);
+}
+
+.navigation .userBx{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
     align-items: center;
-    padding: var(--size-1);
-    color: var(--color-gray-100);
+    overflow: hidden;
+    transition: 0.5s;
 }
 
-.links{
+.active .userBx {
+    position: relative;
+    width: calc(100% - 60px);
+    height: 60px;
     display: flex;
+    align-items: center;
+    overflow: hidden;
+    transition: 0s;
 }
 
-.link{
-    padding: var(--size-3);
-    list-style: none;
-    transition: all ease-in 0.3s;
-    font-size: var(--size-5);
+.active .userBx .username {
+    white-space: nowrap;
+    color: var(--color-black-100);
 }
 
-.btnContainer{
+.navigation .userBx .imgBx,
+.active .userBx .imgBx {
+    position: relative;
+    min-width: 60px;
+    height: 60px;
+    background-color: var(--color-black-100);
+    border-radius: 50%;
+    border: 10px solid var(--color-gray-100);
+    overflow: hidden;
+}
+
+.navigation .userBx .imgBx .img,
+.active .userBx .imgBx .img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.navigation .menuToggle,
+.active .menuToggle {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.btn{
+.navigation .menuToggle::before {
+    content: '';
+    position: absolute;
+    width: var(--size-6);
+    height: 2px;
+    background-color: var(--color-black-100);
+    transform: translateY(-10px);
+    box-shadow: 0 10px #555;
+    transition: 0.5s;
+}
+
+.active .menuToggle::before {
+    content: '';
+    position: absolute;
+    width: var(--size-6);
+    height: 2px;
+    background-color: var(--color-black-100);
+    transform: translateY(0px) rotate(45deg);
+    box-shadow: 0 0 #555;
+    transition: 0.5s;
+}
+
+.navigation .menuToggle::after {
+    content: '';
+    position: absolute;
+    width: var(--size-6);
+    height: 2px;
+    background-color: var(--color-black-100);
+    transform: translateY(10px);
+    transition: 0.5s;
+}
+
+.active .menuToggle::after {
+    content: '';
+    position: absolute;
+    width: var(--size-6);
+    height: 2px;
+    background-color: var(--color-black-100);
+    transform: translateY(0px) rotate(-45deg);
+    transition: 0.5s;
+}
+
+.menu {
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 60px);
+    margin-top: 60px;
+    padding: var(--size-4);
+    border-top: 1px solid rgba(0,0,0,0.1);
     list-style: none;
-    background-color: gray;
-    padding-inline: var(--size-3);
-    padding-block: var(--size-2);
-    margin-inline: var(--size-2);
-    border-radius: 50px;
-    font-size: var(--size-5);
-    transition: all 0.3s ease-in-out;
 }
 
+.menu li{
 
-@media (max-width: 991px) {
-    .links{
-        display: none;
-    }
+}
 
-    .btnContainer{
-        display: none;
-    }
+.link {
+    color: var(--color-black-100);
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    margin: var(--size-4) 0;
+    gap: var(--size-2);
+    transition: 0.5s;
+}
+
+.link:hover {
+    color: #555;
+    transform: translateX(var(--size-2));
+
+}
+
+.icon {
+    font-size: var(--size-4);
 }
 
