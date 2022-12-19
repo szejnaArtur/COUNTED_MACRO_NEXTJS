@@ -1,20 +1,37 @@
 .container {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: rgba(0, 0, 0, 30%);
     z-index: 15;
     position: absolute;
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: center;
+    overflow-y: scroll;
 }
+
+/*.container::-webkit-scrollbar {*/
+/*    width: 10px;*/
+/*}*/
+
+/*.container::-webkit-scrollbar-track {*/
+/*    -webkit-box-shadow: inset 0 0 6px rgba(208, 204, 204, 0.3);*/
+/*}*/
+
+/*.container::-webkit-scrollbar-thumb {*/
+/*    background-color: darkgrey;*/
+/*    outline: 1px solid slategrey;*/
+/*    border-radius: 20px 20px;*/
+/*}*/
 
 .content {
     background-color: var(--color-gray-100);
     border-radius: var(--size-2);
     max-width: 600px;
+    height: auto;
     display: flex;
     flex-direction: column;
+    margin: var(--size-10);
 }
 
 .header {
@@ -78,6 +95,7 @@
     border: 1px solid var(--color-gray-600);
     border-radius: var(--size-1);
     padding: 0 40px 0 var(--size-2);
+    font-size: var(--size-3);
 }
 
 .calculator .section p {
@@ -113,8 +131,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-inline: var(--size-4);
-    margin-block: var(--size-2);
+    margin: var(--size-2) var(--size-4) var(--size-4) var(--size-4);
     border: 1px solid var(--color-gray-600);
     border-radius: var(--size-1);
     font-size: var(--size-4);
@@ -127,9 +144,17 @@
     margin: 0 var(--size-1);
 }
 
+.tableContainer {
+    margin: 0 var(--size-4) var(--size-2) var(--size-4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .table {
-    margin: var(--size-4);
     font-size: var(--size-3);
+    width: 100%;
 }
 
 .table tr {
@@ -144,7 +169,8 @@
 
 .table tr th,
 .table tr td{
-    text-align: center;
+    text-align: left;
+    padding-inline: var(--size-3) ;
 }
 
 .table tr th{
@@ -161,12 +187,16 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-inline: var(--size-4);
-    margin-bottom: var(--size-4);
+    margin-block: var(--size-2);
     border: 1px solid var(--color-gray-600);
     border-radius: var(--size-1);
     font-size: var(--size-4);
     height: var(--size-10);
     background-color: var(--color-yellow-500);
     color: var(--color-black-100);
+    width: 100%;
+}
+
+@media (max-width: 991px) {
+
 }
