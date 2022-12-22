@@ -8,7 +8,7 @@ import {FiSettings} from 'react-icons/fi';
 
 const MainNavigation = () => {
 
-    const [active, setActive] = useState(false);
+    const [active, setActive] = useState(true);
 
     const handleClick = () => {
         setActive(prevState => !prevState);
