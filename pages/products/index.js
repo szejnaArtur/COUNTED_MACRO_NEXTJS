@@ -1,11 +1,15 @@
 import {Fragment} from "react";
-import UploadFile from "../../components/form/upload-file";
+import AddProductForm from "../../components/form/add-product-form";
 
 const ProductsCard = () => {
 
     return (
         <Fragment>
-            <UploadFile/>
+            <div style={{
+                minHeight: '100vh'
+            }}>
+                <AddProductForm/>
+            </div>
         </Fragment>
     )
 

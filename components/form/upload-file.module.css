@@ -1,5 +1,4 @@
 .container{
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -8,7 +7,7 @@
 }
 
 .field {
-    color: var(--color-gray-100);
+    color: var(--color-black-100);
 }
 
 .field p {
@@ -26,7 +25,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: var(--size-3);
+    padding: var(--size-2);
     position: relative;
     overflow: hidden;
     text-align: center;

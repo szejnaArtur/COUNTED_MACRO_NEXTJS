@@ -2,7 +2,7 @@ import {useState} from "react";
 
 import classes from './upload-file.module.css';
 
-const UploadFile = () => {
+const UploadFile = (props) => {
 
     const [files, setFiles] = useState('');
     //state for checking file size
@@ -75,7 +75,7 @@ const UploadFile = () => {
                     <label>Select a file from your computer</label>
                     <input type='file' multiple onChange={uploadFileHandler}/>
                 </div>
-                <button type='submit'>Upload</button>
+                <button type='submit'>{props.buttonText}</button>
             </div>
             {!fileSize && <p style={{color: 'red'}}>File size exceeded!</p>}
             {fileUploadProgress && <p style={{color: "red"}}>Uploading File(s)</p>}
