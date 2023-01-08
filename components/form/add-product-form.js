@@ -4,6 +4,9 @@ import classes from './add-product-form.module.css';
 import NotificationContext from '../../store/notification-context';
 
 import {RxCross2} from 'react-icons/rx';
+import UploadFile from "./upload-forms/upload-file-form";
+
+const FILE_UPLOAD_BASE_ENDPOINT = "http://localhost:8080";
 
 const AddProductForm = () => {
 
@@ -12,16 +15,18 @@ const AddProductForm = () => {
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
 
-    const [calories, setCalories] = useState(0);
-    const [carbs, setCarbs] = useState(0);
-    const [fat, setFat] = useState(0);
-    const [protein, setProtein] = useState(0);
-    const [water, setWater] = useState(0);
+    const [calories, setCalories] = useState("1");
+    const [carbs, setCarbs] = useState("0");
+    const [fat, setFat] = useState("0");
+    const [protein, setProtein] = useState("0");
+    const [water, setWater] = useState("0");
 
     const [vitaminCount, setVitaminCount] = useState(null);
     const [vitaminUnit, setVitaminUnit] = useState('mg');
     const [vitaminName, setVitaminName] = useState('Vitamin A');
     const [vitaminList, setVitaminList] = useState([]);
+
+    const [file, setFile] = useState(null);
 
     const [options, setOptions] = useState([
         {
@@ -164,6 +169,8 @@ const AddProductForm = () => {
         },
     ]);
 
+
+
     const handleRemoveVitamin = (name) => {
         options.some(option => {
             if (option.name === name){
@@ -225,7 +232,7 @@ const AddProductForm = () => {
         setVitaminName(firstActive);
     }
 
-    async function sendProductHandler(event) {
+    async function saveProductHandler(event) {
         event.preventDefault();
 
         if (
@@ -252,11 +259,28 @@ const AddProductForm = () => {
             return;
         }
 
+        if (file !== null) {
+            if (file[0].size > 1048576) {
+                notificationCtx.showNotification({
+                    title: 'Error!',
+                    message: 'File size exceeded!',
+                    status: 'error'
+                });
+                return;
+            }
+        }
+
         notificationCtx.showNotification({
             title: 'Signing up...',
             message: 'Sending to the database.',
             status: 'pending'
         });
+
+        const formData = new FormData();
+
+        if (file !== null){
+            formData.append(`file`, file[0]);
+        }
 
         const newProduct = {
             name,
@@ -266,13 +290,18 @@ const AddProductForm = () => {
             fat,
             protein,
             water,
-            vitaminList
+            vitaminList,
         }
 
-        console.log(newProduct);
+        formData.append('product',
+            new Blob([JSON.stringify(newProduct)], {
+                type: 'application/json'
+            }));
+
+        console.log(formData);
 
         try{
-            await sendProduct(newProduct);
+            await sendProduct(formData);
             notificationCtx.showNotification({
                 title: 'Success!',
                 message: 'Successfully saved!',
@@ -280,11 +309,13 @@ const AddProductForm = () => {
             });
             setName('');
             setDescription('');
-            setCalories(0);
-            setCarbs(0);
-            setFat(0);
-            setProtein(0);
-            setWater(0);
+            setCalories("0");
+            setCarbs("0");
+            setFat("0");
+            setProtein("0");
+            setWater("0");
+            setVitaminList([]);
+            setFile(null)
         } catch (error) {
             notificationCtx.showNotification({
                 title: 'Error!',
@@ -326,7 +357,7 @@ const AddProductForm = () => {
                                 max={100}
                                 step={0.1}
                             />
-                            <p>g</p>
+                            <p>kcal</p>
                         </div>
                         <div className={classes.input}>
                             <label>Carbs</label>
@@ -385,7 +416,7 @@ const AddProductForm = () => {
                         <div className={classes.tagsContainer}>
                             {vitaminList !== null && vitaminList.map(vit => {
                                 return (
-                                    <div className={classes.tags}>
+                                    <div className={classes.tags} key={vit.name}>
                                         <p>{`${vit.name} - ${vit.value} ${vit.unit}`}</p>
                                         <RxCross2 style={{cursor: 'pointer'}} onClick={() => handleRemoveVitamin(`${vit.name}`)}/>
                                     </div>
@@ -404,27 +435,24 @@ const AddProductForm = () => {
                         <select onChange={event => setVitaminName(event.target.value)} value={vitaminName}>
                             {options.map(option => {
                                 if (option.active) {
-                                    return <option>{option.name}</option>
+                                    return <option key={option.name}>{option.name}</option>
                                 }
                             })}
                         </select>
                         <button type='button' className={classes.btn} onClick={handleAddVitamin}>Add</button>
                     </div>
-                    {/*<UploadFile buttonText='Send'/>*/}
-                    <button type='button' onClick={sendProductHandler} className={classes.saveBtn}>Save</button>
+                    <UploadFile buttonText='Send' file={file} setFile={setFile}/>
+                    <button type='button' onClick={saveProductHandler} className={classes.saveBtn}>Save</button>
                 </div>
             </div>
         </Fragment>
     )
 }
 
-async function sendProduct(product) {
-    const response = await fetch('http://localhost:8080/products', {
-        method:'POST',
-        body: JSON.stringify(product),
-        headers: {
-            'Content-Type': 'application/json',
-        },
+async function sendProduct(formData) {
+    const response = await fetch(FILE_UPLOAD_BASE_ENDPOINT + '/products', {
+        method: 'POST',
+        body: formData,
     });
 
     const data = await response.json();
