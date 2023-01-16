@@ -314,6 +314,7 @@ const AddProductForm = () => {
             setFat("0");
             setProtein("0");
             setWater("0");
+            setVitaminCount(null);
             setVitaminList([]);
             setFile(null)
         } catch (error) {
