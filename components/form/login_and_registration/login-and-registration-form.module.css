@@ -1,0 +1,159 @@
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url("/images/backgrounds/bg-with-tomatoes.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: 0.5s;
+    font-family: var(--font-family);
+    letter-spacing: var(--letter-spacing);
+}
+
+.container {
+    position: relative;
+    width: 800px;
+    height: 500px;
+    margin: 20px;
+}
+
+.blueBg {
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    height: 420px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 5px 45px rgb(0, 0, 0, 0.15);
+    border-radius: var(--size-4);
+}
+
+.blueBg .box {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.blueBg .box h2 {
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.blueBg .box button {
+    cursor: pointer;
+    padding: 10px 20px;
+    background: #fff;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: var(--font-family);
+    letter-spacing: var(--letter-spacing);
+    border: 1px solid #999;
+    border-radius: var(--size-2);
+}
+
+.formBx {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: #fff;
+    z-index: 1000;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 45px rgb(0,0,0,0.25);
+    transition: 0.5s ease-in-out;
+    border-radius: var(--size-4);
+}
+
+.formBx.active{
+    left: 50%
+}
+
+.formBx .form{
+    position: absolute;
+    width: 100%;
+    padding: 40px;
+    transition: 0.5s;
+}
+
+.formBx .form form{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.formBx .form form h3{
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.formBx .form form input{
+    margin-bottom: 20px;
+    padding: 10px;
+    outline: none;
+    font-size: 16px;
+    border: 1px solid #333;
+    border-radius: var(--size-1);
+    font-family: var(--font-family);
+    letter-spacing: var(--letter-spacing);
+}
+
+.formBx .form form input[type='button'] {
+    border: none;
+    color: #fff;
+    max-width: 130px;
+    cursor: pointer;
+}
+
+.formBx .form form .btn{
+    background: var(--color-green-200);
+}
+
+.formBx .form form .forgot{
+    color: #333;
+}
+
+@media (max-width: 991px){
+    .container{
+        max-width: 400px;
+        height: 650px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container .blueBg{
+        top: 0;
+        height: 100%;
+    }
+
+    .formBx{
+        width: 100%;
+        height: 500px;
+        top: 0;
+        box-shadow: none;
+    }
+
+    .blueBg .box{
+        position: absolute;
+        width: 100%;
+        height: 150px;
+        bottom: 0;
+    }
+}

@@ -1,5 +1,4 @@
 import {Fragment} from "react";
-import AddProductForm from "../../components/form/add-product-form";
 import ProductList from "../../components/tables/product-list";
 import axios from "axios";
 
@@ -15,7 +14,6 @@ const ProductsCard = (props) => {
                 padding: 0
             }}>
                 <ProductList products={products}/>
-                <AddProductForm/>
             </div>
         </Fragment>
     )

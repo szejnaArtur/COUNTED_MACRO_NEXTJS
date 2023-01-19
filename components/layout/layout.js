@@ -11,7 +11,7 @@ const Layout = (props) => {
 
     return (
         <Fragment>
-            <MainNavigation/>
+            {/*<MainNavigation/>*/}
             <main>{props.children}</main>
             <Notification
                 title={activeNotification && activeNotification.title}

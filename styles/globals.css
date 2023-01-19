@@ -14,6 +14,9 @@ body {
   --color-gray-800: #575757;
   --color-gray-900: #464646;
 
+  --color-green-200: #62b55f;
+  --color-green-300: #51a44f;
+
   --color-green-crayola-100: #d2f898;
   --color-green-crayola-200: #d2f898dd;
   --color-green-crayola-300: #d2f898cc;
@@ -82,6 +85,9 @@ body {
   --size-16: 4rem;
   --size-20: 5rem;
   --size-40: 10rem;
+
+  --font-family: 'Inter', sans-serif;
+  --letter-spacing: 2px;
 
   margin: 0;
   padding: 0;
