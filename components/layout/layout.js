@@ -3,6 +3,7 @@ import MainNavigation from "./main-navigation";
 
 import Notification from '../ui/notification';
 import NotificationContext from '../../store/notification-context';
+import LayoutAuthenticated from "./layout-authenticated";
 
 const Layout = (props) => {
 
@@ -11,7 +12,9 @@ const Layout = (props) => {
 
     return (
         <Fragment>
-            {/*<MainNavigation/>*/}
+            {/*<LayoutAuthenticated>*/}
+            {/*    <MainNavigation/>*/}
+            {/*</LayoutAuthenticated>*/}
             <main>{props.children}</main>
             <Notification
                 title={activeNotification && activeNotification.title}

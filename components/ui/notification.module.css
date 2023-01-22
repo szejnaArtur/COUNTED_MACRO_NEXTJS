@@ -12,6 +12,7 @@
     padding: 0.5rem 10%;
     box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.2);
     transition: ease-in-out all 300ms;
+    z-index: 999;
 }
 
 .notification h2 {
