@@ -12,9 +12,9 @@ const Layout = (props) => {
 
     return (
         <Fragment>
-            {/*<LayoutAuthenticated>*/}
-            {/*    <MainNavigation/>*/}
-            {/*</LayoutAuthenticated>*/}
+            <LayoutAuthenticated>
+                <MainNavigation/>
+            </LayoutAuthenticated>
             <main>{props.children}</main>
             <Notification
                 title={activeNotification && activeNotification.title}

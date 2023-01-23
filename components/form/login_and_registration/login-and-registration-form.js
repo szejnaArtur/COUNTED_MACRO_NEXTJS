@@ -4,9 +4,9 @@ import {useRouter} from "next/router";
 import AuthenticationService from "../../api/authentication/authentication-service";
 
 import {BsFillCheckCircleFill, BsFillExclamationCircleFill} from 'react-icons/bs';
-import axios from "axios";
 import RegistrationService from "../../api/registration/registration-service";
 import NotificationContext from "../../../store/notification-context";
+import {blockUnallowedResponse} from "next/dist/server/web/adapter";
 
 
 const LoginAndRegistrationForm = () => {
@@ -92,12 +92,20 @@ const LoginAndRegistrationForm = () => {
                 message: 'Successfully saved!',
                 status: 'success'
             });
+
+            AuthenticationService.executeJwtAuthenticationService(emailToRegistration, passwordToRegistration)
+                .then(response => {
+                    AuthenticationService.registerSuccessfulLoginForJwt(response.data.access_token);
+                    router.push("/profile")
+                });
         }).catch(err => {
+            console.log(err);
             notificationCtx.showNotification({
                 title: 'Error!',
-                message: err.message || 'Something went wrong!',
+                message: err.response.data.message || 'Something went wrong!',
                 status: 'error'
             });
+
         })
     }
 
