@@ -1,6 +1,6 @@
 import {Fragment, useEffect, useState} from "react";
 import {useRouter} from "next/router";
-import AuthenticationService from "../api/authentication/authentication-service";
+import AuthenticationService from "../api/auth/authentication-service";
 
 const LayoutAuthenticated = (props) => {
     const [profile, setProfile] = useState();
@@ -15,7 +15,7 @@ const LayoutAuthenticated = (props) => {
             console.log("git");
         } else {
             console.log("nie zalogowano")
-            // await router.push("/registration");
+
         }
     }
 

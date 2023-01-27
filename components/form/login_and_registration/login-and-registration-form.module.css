@@ -74,127 +74,28 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 5px 45px rgb(0,0,0,0.25);
+    box-shadow: 0 5px 45px rgb(0, 0, 0, 0.25);
     transition: 0.5s ease-in-out;
     border-radius: var(--size-4);
 }
 
-.formBx.active{
+.formBx.active {
     left: 50%
 }
 
-.formBx .form{
+.formBx .form {
     position: absolute;
     width: 100%;
     padding: 40px;
     transition: 0.5s;
 }
 
-.formBx .form form{
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-}
-
-.formBx .form form h3{
-    font-size: 1.5em;
-    color: #333;
-    margin-bottom: 20px;
-    font-weight: 500;
-}
-
-.formBx .form form input{
-    padding: 10px;
-    outline: none;
-    font-size: 16px;
-    border: 1px solid #333;
-    border-radius: var(--size-1);
-    font-family: var(--font-family);
-    letter-spacing: var(--letter-spacing);
-    margin-block: var(--size-2) var(--size-1);
-    z-index: 0;
-}
-
-.formBx .form form .input_container{
-    display: flex;
-    flex-direction: column;
-    position: relative;
-}
-
-.formBx .form form .input_container div{
-    height: 40px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-    position: absolute;
-    top: 9px;
-    right: -30px;
-}
-
-.formBx .form form .input_container div:hover span{
-    opacity: 1;
-}
-
-.formBx .form form .input_container div span{
-    width: 200px;
-    height: 40px;
-    padding: var(--size-1);
-    font-size: var(--size-2);
-    background-color: var(--color-black-100);
-    color: white;
-    border-radius: var(--size-1);
-    display: flex;
-    opacity: 0;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: relative;
-    transition: all 0.5s;
-}
-
-.formBx .form form .input_container div span::before{
-    content: "";
-    width: 10px;
-    height: 10px;
-    background-color: var(--color-black-100);
-    position: absolute;
-    transform: rotate(45deg);
-    right: -5px;
-    top: 15px;
-}
-
-.success {
-    color: var(--color-green-200);
-}
-
-.fail {
-    color: var(--color-red-500);
-}
-
-.formBx .form form input[type='button'] {
-    border: none;
-    color: #fff;
-    max-width: 130px;
-    cursor: pointer;
-}
-
-.btn_inactive {
-    pointer-events: none;
-    background: var(--color-gray-300);
-}
-
-.btn_active {
-    background: var(--color-green-200);
-}
-
-.formBx .form form .forgot{
+.formBx .form form .forgot {
     color: #333;
 }
 
-@media (max-width: 991px){
-    .container{
+@media (max-width: 991px) {
+    .container {
         max-width: 400px;
         height: 650px;
         display: flex;
@@ -202,19 +103,19 @@
         align-items: center;
     }
 
-    .container .blueBg{
+    .container .blueBg {
         top: 0;
         height: 100%;
     }
 
-    .formBx{
+    .formBx {
         width: 100%;
         height: 500px;
         top: 0;
         box-shadow: none;
     }
 
-    .blueBg .box{
+    .blueBg .box {
         position: absolute;
         width: 100%;
         height: 150px;
