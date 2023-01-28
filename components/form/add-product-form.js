@@ -1,7 +1,7 @@
 import {Fragment, useContext, useState} from "react";
 import classes from './add-product-form.module.css';
 
-import NotificationContext from '../../store/notification-context';
+import NotificationContext from '../../context/notification-context';
 
 import {RxCross2} from 'react-icons/rx';
 import UploadFile from "./upload-forms/upload-file-form";

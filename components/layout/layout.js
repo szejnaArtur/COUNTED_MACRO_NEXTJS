@@ -2,7 +2,7 @@ import {Fragment, useContext} from "react";
 import MainNavigation from "./main-navigation";
 
 import Notification from '../ui/notification';
-import NotificationContext from '../../store/notification-context';
+import NotificationContext from '../../context/notification-context';
 import LayoutAuthenticated from "./layout-authenticated";
 
 const Layout = (props) => {

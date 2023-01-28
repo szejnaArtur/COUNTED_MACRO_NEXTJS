@@ -1,0 +1,39 @@
+.sign_in {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.sign_in h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.sign_in input {
+    padding: 10px;
+    outline: none;
+    font-size: 16px;
+    border: 1px solid #333;
+    border-radius: var(--size-1);
+    font-family: var(--font-family);
+    letter-spacing: var(--letter-spacing);
+    margin-top: var(--size-3);
+    z-index: 0;
+}
+
+.sign_in button {
+    margin-block: var(--size-4);
+    padding: var(--size-2);
+}
+
+.forgot {
+    color: var(--color-black-500);
+}
+
+.forgot:hover {
+    color: var(--color-black-100);
+    text-decoration: underline;
+}

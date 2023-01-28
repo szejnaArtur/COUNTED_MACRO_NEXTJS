@@ -1,14 +1,14 @@
 import {useContext, useEffect, useState} from "react";
-import NotificationContext from "../../../store/notification-context";
+import NotificationContext from "../../../context/notification-context";
 import RegistrationService from "../../api/auth/registration-service";
-import classes from "./registration.module.css";
+import classes from "./registration-form.module.css";
 import {FaCheck, FaInfoCircle, FaTimes} from "react-icons/fa";
 
 const FULL_NAME_REGEX = /^[a-zA-Z]{2,40}( [a-zA-Z]{2,40})+$/;
 const MAIL_REGEX = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
 const PASSWORD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 
-const Registration = () => {
+const RegistrationForm = () => {
     const notificationCtx = useContext(NotificationContext);
 
     const [fullName, setFullName] = useState('');
@@ -27,8 +27,6 @@ const Registration = () => {
     const [validMatch, setValidMatch] = useState(false);
     const [matchFocus, setMatchFocus] = useState(false);
 
-    const [errMsg, setErrMsg] = useState('');
-
     useEffect(() => {
         setValidFullName(FULL_NAME_REGEX.test(fullName));
     }, [fullName])
@@ -41,10 +39,6 @@ const Registration = () => {
         setValidPassword(PASSWORD_REGEX.test(password));
         setValidMatch(password === matchPassword);
     }, [password, matchPassword])
-
-    useEffect(() => {
-        setErrMsg('');
-    }, [fullName, email, password, matchPassword])
 
     const submitHandler = async (e) => {
         e.preventDefault();
@@ -91,7 +85,7 @@ const Registration = () => {
             } else {
                 notificationCtx.showNotification({
                     title: 'Error!',
-                    message: 'Registration Failed.',
+                    message: 'RegistrationForm Failed.',
                     status: 'error'
                 });
             }
@@ -201,4 +195,4 @@ const Registration = () => {
     )
 }
 
-export default Registration;
+export default RegistrationForm;

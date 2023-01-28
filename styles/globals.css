@@ -47,7 +47,11 @@ body {
   --color-maximum-yellow-800: #818200;
   --color-maximum-yellow-900: #4a4b16;
 
-  --color-black-100: #2f2f2f;
+  --color-black-100: #4f4f4f;
+  --color-black-300: #3f3f3f;
+  --color-black-500: #2f2f2f;
+  --color-black-700: #1f1f1f;
+  --color-black-900: #000000;
 
   --color-red-100: #D01313;
   --color-red-200: #D01313dd;
@@ -91,7 +95,7 @@ body {
 
   margin: 0;
   padding: 0;
-  color: #252525;
+  color: var(--color-black-500);
   font-family: 'Inter', sans-serif;
   background-image: url("/images/backgrounds/bg-with-tomatoes.jpg");
   background-repeat: no-repeat;

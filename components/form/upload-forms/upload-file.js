@@ -1,7 +1,7 @@
 import {useContext, useState} from "react";
 
 import classes from './upload-file.module.css';
-import NotificationContext from "../../../store/notification-context";
+import NotificationContext from "../../../context/notification-context";
 import {type} from "os";
 
 const UploadFile = (props) => {

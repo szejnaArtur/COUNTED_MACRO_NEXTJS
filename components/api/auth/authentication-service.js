@@ -8,10 +8,15 @@ class AuthenticationService {
         return 'Bearer ' + token;
     }
 
-    async executeJwtAuthenticationService(username,  password) {
-        return axios.post(`${API_URL}/api/login`, {
-           username,
-           password
+    async executeJwtAuthenticationService(email, password) {
+        return axios.post(`${API_URL}/api/login`, JSON.stringify({
+            email,
+            password
+        }), {
+            headers: {
+                'Context-Type': 'application/json',
+                withCredentials: true
+            }
         });
     }
 
